@@ -28,7 +28,7 @@ type frame struct {
 	structure int
 	hull      int
 	speed     float64
-	actions   int
+	mounts    int
 	pilot     string
 }
 
@@ -40,7 +40,7 @@ func NewFrame(frameType FrameType, pilot string) (frame, error) {
 			structure: 50,
 			hull:      25,
 			speed:     10.0,
-			actions:   2,
+			mounts:    2,
 			pilot:     pilot,
 		}, nil
 	case Medium:
@@ -49,7 +49,7 @@ func NewFrame(frameType FrameType, pilot string) (frame, error) {
 			structure: 100,
 			hull:      50,
 			speed:     7.5,
-			actions:   3,
+			mounts:    3,
 			pilot:     pilot,
 		}, nil
 	case Heavy:
@@ -58,7 +58,7 @@ func NewFrame(frameType FrameType, pilot string) (frame, error) {
 			structure: 150,
 			hull:      75,
 			speed:     5.0,
-			actions:   4,
+			mounts:    4,
 			pilot:     pilot,
 		}, nil
 	default:
@@ -72,5 +72,5 @@ func (f frame) PrintDebugInfo() {
 	fmt.Println("Structure:", f.structure)
 	fmt.Println("Hull:", f.hull)
 	fmt.Println("Speed:", f.speed)
-	fmt.Println("Actions:", f.actions)
+	fmt.Println("Mounts:", f.mounts)
 }
